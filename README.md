@@ -6,9 +6,9 @@
 
 | Column    | Type         | Options                   |
 | --------- | ------------ | ------------------------- |
-| name      | varchar(255) | null: false               |
-| email     | varchar(255) | null: false, unique: true |
-| password  | char(32)     | null: false               |
+| name      | string       | null: false               |
+| email     | string       | null: false, unique: true |
+| password  | string       | null: false               |
 
 ### Association
 
@@ -20,7 +20,7 @@
 
 | Column     | Type         | Options     |
 | ---------- | ------------ | ----------- |
-| name       | varchar(255) | null: false |
+| name       | string       | null: false |
 
 ### Association
 
@@ -35,7 +35,7 @@
 | body     | text         |                                |
 | image    | string       |                                |
 | user_id  | integer      | null: false, foreign_key: true |
-| group_id | varchar(255) | null: false, foreign_key: true |
+| group_id | integer      | null: false, foreign_key: true |
 
 ### Association
 
