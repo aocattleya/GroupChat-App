@@ -1,12 +1,12 @@
 # ChatSpace DB 設計
 
-![ER図](https://user-images.githubusercontent.com/39142850/68106148-089e2c00-ff24-11e9-866b-f3af3e0097cd.png)
+![ER図](https://user-images.githubusercontent.com/39142850/68107922-9f211c00-ff29-11e9-990a-65915a064fc9.png)
 
 ## users テーブル
 
 | Column    | Type         | Options                   |
 | --------- | ------------ | ------------------------- |
-| user_name | varchar(255) | null: false               |
+| name      | varchar(255) | null: false               |
 | email     | varchar(255) | null: false, unique: true |
 | password  | char(32)     | null: false               |
 
@@ -20,7 +20,7 @@
 
 | Column     | Type         | Options     |
 | ---------- | ------------ | ----------- |
-| group_name | varchar(255) | null: false |
+| name       | varchar(255) | null: false |
 
 ### Association
 
@@ -32,8 +32,8 @@
 
 | Column   | Type         | Options                        |
 | -------- | ------------ | ------------------------------ |
-| body     | text         | null: false                    |
-| image    | string       | null: false                    |
+| body     | text         |                                |
+| image    | string       |                                |
 | user_id  | integer      | null: false, foreign_key: true |
 | group_id | varchar(255) | null: false, foreign_key: true |
 
