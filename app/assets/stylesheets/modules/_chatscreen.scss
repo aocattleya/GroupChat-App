@@ -1,0 +1,120 @@
+@import "config/_variable.scss";
+
+* {
+  box-sizing: border-box;
+}
+.chat-main {
+  width: calc(100vw - 300px);
+  float: left;
+  .main-header {
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px $border_color;
+    overflow: scroll;
+    &__left-box {
+      margin-top: 35px;
+      &__current-group {
+        font-size: 20px;
+        color: $dark_gray;
+        margin-bottom: 15px;
+      }
+      &__member-list {
+        display: flex;
+        font-size: 12px;
+        color: $light_gray;
+        &__member__list-space {
+          margin-left: 0.3rem;
+        }
+      }
+    }
+    &__edit-btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px $light_blue;
+      position: absolute;
+      right: 40px;
+      a {
+        text-decoration: none;
+        color: $light_blue;
+      }
+    }
+  }
+  .messages {
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: $white_Shadow;
+    overflow: scroll;
+    .message {
+      padding-bottom: 40px;
+      &__upper-info {
+        display: flex;
+        margin-bottom: 10px;
+        &__talker {
+          color: $dark_gray;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $light_gray;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text {
+        color: $dark_gray;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .form {
+    height: 90px;
+    padding: 20px 40px;
+    background-color: $form_gray;
+    .new_message {
+      display: flex;
+    }
+    .input-box {
+      position: relative;
+      width: 100%;
+      &__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: $dark_gray;
+        border-style: none;
+      }
+      &__image {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        .fa {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        &__file {
+          display: none;
+        }
+      }
+    }
+    .submit-btn {
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: $light_blue;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
