@@ -28,11 +28,9 @@
           .message__text スターが欲しい！
       .form
         %form#new_message.new_message
-          %input{name: "utf8", type: "hidden", value: "✓"}
-          %input{name: "authenticity_token", type: "hidden"}
           .input-box
             %input{name: "message[content]", placeholder: "type a message", type: "text", class: "input-box__text", id: "message_content"}
             %label{class: "input-box__image", for: "message_image"}
               %i{class: "fa fa-image"}
               %input{name: "message[image]", type: "file", class: "input-box__image__file", id: "message_image"}
-          %input{name: "commit", type: "submit", value: "Send", type: "submit", class: "submit-btn"}
+          %input{name: "commit", type: "submit", value: "Send", class: "submit-btn"}
