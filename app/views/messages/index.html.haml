@@ -1,0 +1,43 @@
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{charset: "utf-8"}
+    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
+  %body
+    .flash-box
+      -# .notice グループを作成しました
+    .wapper
+      = render "shared/side_bar"
+      .chat-main
+        .main-header
+          .main-header__left-box
+            %h2.main-header__left-box__current-group
+              GitHu部
+            %ul.main-header__left-box__member-list
+              Member：
+              %li.main-header__left-box__member-list__member ao
+              %li.main-header__left-box__member-list__member__list-space rick
+          .main-header__edit-btn
+            = link_to "#" do
+              Edit
+        .messages
+          .message
+            .message__upper-info
+              %p.message__upper-info__talker aocattleya
+              %p.message__upper-info__date 2019/11/04(Mon) 16:01:01
+            .message__text GitHubが好き
+          .message
+            .message__upper-info
+              %p.message__upper-info__talker aocattleya
+              %p.message__upper-info__date 2019/11/05(Mon) 16:01:01
+            .message__text スターが欲しい！
+        .form
+          %form#new_message.new_message
+            %input{name: "utf8", type: "hidden", value: "✓"}
+            %input{name: "authenticity_token", type: "hidden"}
+            .input-box
+              %input{name: "message[content]", placeholder: "type a message", type: "text", class: "input-box__text", id: "message_content"}
+              %label{class: "input-box__image", for: "message_image"}
+                %i{class: "fa fa-image"}
+                %input{name: "message[image]", type: "file", class: "input-box__image__file", id: "message_image"}
+            %input{name: "commit", type: "submit", value: "Send", type: "submit", class: "submit-btn"}
