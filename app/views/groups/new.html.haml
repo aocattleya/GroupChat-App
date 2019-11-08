@@ -1,22 +1,27 @@
 .chat-group-form
   %h1 新規チャットグループ
-  %form#new_chat_group.new_chat_group{"accept-charset": "UTF-8", action: "/chat_groups", method: "post"}
-    %input{name: "utf8", type: "hidden", value: "✓"}/
-    %input{name: "authenticity_token", type: "hidden", value: "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA=="}/
-    .chat-group-form__field.clearfix
+  = form_for @group do |f|
+    - if @group.errors.any?
+      .chat-group-form__errors
+        %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
+        %ul
+          - @group.errors.full_messages.each do |message|
+            %li= message
+    .chat-group-form__field
       .chat-group-form__field--left
-        %label.chat-group-form__label{for: "chat_group_name"} グループ名
+        = f.label :name, class: 'chat-group-form__label'
       .chat-group-form__field--right
-        %input#chat_group_name.chat-group-form__input{name: "chat_group[name]", placeholder: "グループ名を入力してください", type: "text"}/
+        = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
     .chat-group-form__field.clearfix
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+        = f.label "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         / グループ作成機能の追加時はここにcollection_check_boxesの記述
+        = f.collection_check_boxes :user_ids, User.all, :id, :name
         / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
-        %input.chat-group-form__action-btn{"data-disable-with":"Save", name: "commit", type: "submit", value: "Save"}/
+        = f.submit class: 'chat-group-form__action-btn'
