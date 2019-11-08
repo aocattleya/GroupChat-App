@@ -5,8 +5,8 @@
         = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          = link_to "#" do
-            %i.fa.fa-edit
+          = link_to new_group_path do
+            = fa_icon 'edit', class: 'icon'
         %li.side-header__box__menu__edit-user
           = link_to edit_user_path(current_user) do
             = fa_icon 'cog', class: 'icon'

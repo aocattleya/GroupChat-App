@@ -1,0 +1,24 @@
+.chat-group-form
+  %h1 チャットグループ編集
+  %form#edit_chat_group_22.edit_chat_group{"accept-charset":"UTF-8", action: "/chat_groups/22", method: "post"}
+    .chat-group-form__errors
+      %h2
+        1件のエラーが発生しました。
+        %ul
+          %li エラーです
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        %label.chat-group-form__label{for: "chat_group_name"} グループ名
+      .chat-group-form__field--right
+        %input#chat_group_name.chat-group-form__input{name: "chat_group[name]", placeholder: "グループ名を入力してください", type: "text", value: "ほげー"}/
+    .chat-group-form__field.clearfix
+      / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときに使用
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        / グループ作成機能の追加時はここにcollection_check_boxesの記述
+        / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用
+        %input.chat-group-form__action-btn{"data-disable-with":"Save", name: "commit", type: "submit", value: "Save"}/
