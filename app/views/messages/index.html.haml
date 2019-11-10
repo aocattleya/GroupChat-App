@@ -13,16 +13,7 @@
         = link_to "#" do
           Edit
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker aocattleya
-          %p.message__upper-info__date 2019/11/04(Mon) 16:01:01
-        .message__text GitHubが好き
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker aocattleya
-          %p.message__upper-info__date 2019/11/05(Mon) 16:01:01
-        .message__text スターが欲しい！
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
