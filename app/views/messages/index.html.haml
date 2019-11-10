@@ -24,10 +24,10 @@
           %p.message__upper-info__date 2019/11/05(Mon) 16:01:01
         .message__text スターが欲しい！
     .form
-      %form#new_message.new_message
-        .input-box
-          %input{name: "message[content]", placeholder: "type a message", type: "text", class: "input-box__text", id: "message_content"}
-          %label{class: "input-box__image", for: "message_image"}
-            %i.fa.fa-image
-            %input{name: "message[image]", type: "file", class: "input-box__image__file", id: "message_image"}
-        %input{name: "commit", type: "submit", value: "Send", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
