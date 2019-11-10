@@ -47,14 +47,15 @@
   height: calc(100vh - 100px);
   background-color: $side_blue_light;
   padding: 20px 20px 0;
-  overflow: scroll;
   .group {
     margin-bottom: 40px;
     &__name {
+      color: $white;
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__message {
+      color: $white;
       font-size: 11px;
     }
   }
