@@ -4,11 +4,12 @@
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          GitHu部
+          = @group.name
         %ul.main-header__left-box__member-list
           Member：
-          %li.main-header__left-box__member-list__member ao
-          %li.main-header__left-box__member-list__member__list-space rick
+          %li.member
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .main-header__edit-btn
         = link_to "#" do
           Edit
