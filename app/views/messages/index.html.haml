@@ -4,30 +4,22 @@
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          GitHu部
+          = @group.name
         %ul.main-header__left-box__member-list
           Member：
-          %li.main-header__left-box__member-list__member ao
-          %li.main-header__left-box__member-list__member__list-space rick
+          %li.member
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .main-header__edit-btn
-        = link_to "#" do
+        = link_to edit_group_path(@group.id) do
           Edit
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker aocattleya
-          %p.message__upper-info__date 2019/11/04(Mon) 16:01:01
-        .message__text GitHubが好き
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker aocattleya
-          %p.message__upper-info__date 2019/11/05(Mon) 16:01:01
-        .message__text スターが欲しい！
+      = render @messages
     .form
-      %form#new_message.new_message
-        .input-box
-          %input{name: "message[content]", placeholder: "type a message", type: "text", class: "input-box__text", id: "message_content"}
-          %label{class: "input-box__image", for: "message_image"}
-            %i.fa.fa-image
-            %input{name: "message[image]", type: "file", class: "input-box__image__file", id: "message_image"}
-        %input{name: "commit", type: "submit", value: "Send", class: "submit-btn"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

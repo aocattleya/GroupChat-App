@@ -42,16 +42,16 @@
     }
   }
   .messages {
-    height: calc(100vh - 190px);
-    padding: 46px 40px;
     background-color: $white_Shadow;
+    box-sizing: border-box;
+    height: calc(100vh - 100px - 90px);
     overflow: scroll;
+    padding: 46px 40px 0;
     .message {
-      padding-bottom: 40px;
-      &__upper-info {
+      margin-bottom: 40px;
+      .upper-message {
         display: flex;
-        margin-bottom: 10px;
-        &__talker {
+        &__user-name {
           color: $dark_gray;
           font-size: 16px;
           font-weight: bold;
@@ -59,60 +59,58 @@
         &__date {
           color: $light_gray;
           font-size: 12px;
-          margin-left: 10px;
+          padding-left: 10px;
         }
       }
-      &__text {
-        color: $dark_gray;
-        font-size: 14px;
-        margin-bottom: 10px;
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $dark_gray;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        &__image {
+          object-fit: contain;
+          width: 200px;
+        }
       }
     }
   }
   .form {
-    height: 90px;
-    padding: 20px 40px;
     background-color: $form_gray;
-    .new_message {
-      display: flex;
-    }
-    .input-box {
-      position: relative;
-      width: 100%;
-      &__text {
-        height: 50px;
-        width: 100%;
-        padding: 0 40px 0 10px;
-        color: $dark_gray;
-        border-style: none;
-      }
-      &__image {
-        font-size: 1.3rem;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        .fa {
-          display: inline-block;
-          font-family: "Font Awesome 5 Free";
-          font-size: inherit;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-        &__file {
-          display: none;
-        }
-      }
-    }
-    .submit-btn {
-      width: 100px;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      box-sizing: border-box;
+      float: left;
       height: 50px;
-      padding: 0 30px;
-      margin-left: 15px;
+      padding: 0 10px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
       background-color: $light_blue;
+      border: none;
       color: $white;
-      cursor: pointer;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
   }
 }
