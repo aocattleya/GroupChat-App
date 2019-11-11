@@ -1,4 +1,7 @@
 .account-page {
+  a {
+    text-decoration: none;
+  }
   .account-page__inner {
     width: 980px;
     margin: 60px auto;
@@ -7,7 +10,8 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 
-    .account-page__inner--left, .account-page__inner--right {
+    .account-page__inner--left,
+    .account-page__inner--right {
       float: left;
       width: 50%;
     }
@@ -26,7 +30,7 @@
       font-weight: 200;
 
       &:after {
-        content: '';
+        content: "";
         display: block;
         width: 60px;
         margin-top: 5px;
@@ -39,7 +43,6 @@
       font-size: 14px;
       font-weight: 200;
     }
-
     .btn {
       margin-top: 20px;
       color: #fff;
@@ -82,7 +85,7 @@
     border-radius: 2px;
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     float: left;
     margin-top: 20px;
     color: #fff;
@@ -102,7 +105,7 @@
       position: relative;
 
       &:after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: 0;
