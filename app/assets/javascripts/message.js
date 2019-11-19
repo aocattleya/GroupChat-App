@@ -78,5 +78,5 @@ $(() => {
       reloadMessages();
     }
   }
-  setInterval(limitedPageLoad, 10000);
+  setInterval(limitedPageLoad, 7000);
 });
