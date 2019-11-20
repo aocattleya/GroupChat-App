@@ -70,3 +70,8 @@ gem 'devise'
 # Carrierwave
 gem 'carrierwave'
 gem 'mini_magick'
+
+# unicorn
+group :production do
+  gem 'unicorn', '5.4.1'
+end
