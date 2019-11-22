@@ -71,6 +71,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# fog-aws
+gem 'fog-aws'
+
 # unicorn
 group :production do
   gem 'unicorn', '5.4.1'
