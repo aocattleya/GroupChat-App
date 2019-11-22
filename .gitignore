@@ -18,6 +18,7 @@
 
 # Ignore other unneeded files.
 doc/
+config/secrets.yml
 *.swp
 *~
 .project
