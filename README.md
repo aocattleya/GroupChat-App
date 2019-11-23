@@ -1,8 +1,42 @@
-# ChatSpace DB 設計
+![groupchat](https://user-images.githubusercontent.com/39142850/68285943-949a8a00-00c3-11ea-9115-96962290da5d.png)
 
-![ER図](https://user-images.githubusercontent.com/39142850/68107922-9f211c00-ff29-11e9-990a-65915a064fc9.png)
+# 📝 GroupChat-App
 
-## users テーブル
+- Ruby　2.5.1
+  - Ruby on Rails　5.0.7.2
+- HAML
+- SCSS
+  - BEM
+- JavaScript
+  - jQuery
+- Font Awesome5
+- MySQL2
+- AWS
+  - Amazon S3
+  - Nginx
+  - Unicorn
+  - CarrierWave
+  - capistrano
+
+# 📦 Features
+
+## ・Asynchronous communication
+
+![Ajax](https://user-images.githubusercontent.com/39142850/68860107-2b9ebc00-072c-11ea-9849-08d1b0ad4637.gif)
+　
+## ・Automatic updating
+
+![auto](https://user-images.githubusercontent.com/39142850/69133731-b9e2bb80-0af9-11ea-92c7-4cae24d9bb2c.gif)
+　
+## ・Incremental search
+
+![Incremental search](https://user-images.githubusercontent.com/39142850/69483415-880b8500-0e6a-11ea-8ce5-f7770ec3c560.gif)
+　
+# 📊 Database design
+
+![ER](https://user-images.githubusercontent.com/39142850/68107922-9f211c00-ff29-11e9-990a-65915a064fc9.png)
+
+## Table : users
 
 | Column    | Type         | Options                   |
 | --------- | ------------ | ------------------------- |
@@ -16,7 +50,7 @@
 - has_many : messages
 - has_many : groups through: :users_groups
 
-## groups テーブル
+## Table : groups
 
 | Column     | Type         | Options     |
 | ---------- | ------------ | ----------- |
@@ -28,7 +62,7 @@
 - has_many : users_groups
 - has_many : users through: :users_groups
 
-## messages テーブル
+## Table : messages
 
 | Column   | Type         | Options                        |
 | -------- | ------------ | ------------------------------ |
@@ -42,7 +76,7 @@
 - belongs_to : user
 - belongs_to : group
 
-## users_groups テーブル
+## Table : users_groups
 
 | Column   | Type    | Options     |
 | -------- | ------- | ----------- |
