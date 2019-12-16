@@ -89,7 +89,7 @@ GEM
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
-    excon (0.69.1)
+    excon (0.71.0)
     execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
