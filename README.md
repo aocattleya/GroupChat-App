@@ -18,6 +18,16 @@
   - CarrierWave
   - capistrano
 
+# 📘 Usage
+
+```
+$ git clone https://github.com/aocattleya/GroupChat-App.git
+$ cd GroupChat-App
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+```
+
 # 📦 Features
 
 ## ・Asynchronous communication
