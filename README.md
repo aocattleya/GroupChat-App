@@ -18,7 +18,7 @@
   - CarrierWave
   - capistrano
 
-# 📘 Usage
+# 📘Usage
 
 ```
 $ git clone https://github.com/aocattleya/GroupChat-App.git
@@ -26,6 +26,8 @@ $ cd GroupChat-App
 $ bundle install
 $ rails db:create
 $ rails db:migrate
+$ rails s
+👉http://localhost:3000/
 ```
 
 # 📦 Features
